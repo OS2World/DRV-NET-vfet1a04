@@ -1,0 +1,28 @@
+# Makefile for vfet1a.os2 : NDIS 2.0.1 MAC driver
+# MS-MASM 6.0 & link386
+
+AS      = ml.exe
+ASFLAGS = /c /Fl /Cp /nologo
+LN      = link386.exe
+LNFLAGS = /map /inf /exepack:2 /packcode /packdata /noignorecase /nologo
+# LNLIBS  = \DDK\BASE\LIB\doscalls.lib
+
+TARGET  = vfet1a.os2
+OBJECTS = DrvRes.obj HWRes.obj DrvInit.obj
+
+
+.SUFFIXES: .asm .obj
+
+.asm.obj:
+  $(AS) $(ASFLAGS) $**
+
+
+$(TARGET):	$(OBJECTS)
+  $(LN) $(LNFLAGS) $(OBJECTS),$@,,$(LNLIBS),$*.def
+  eautil $@ nul /s
+  mapsym $*
+  lxlite $@
+
+clean:
+  if exist *.obj  del *.obj
+  if exist *.lst  del *.lst

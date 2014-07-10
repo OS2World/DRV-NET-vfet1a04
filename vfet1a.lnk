@@ -1,0 +1,75 @@
+===========================================================
+VIA VT86C100A Rhine Another OS/2 NDIS 2.0.1 MAC driver 1.04
+===========================================================
+
+1.Introduction
+
+VIA VT86C100A is of the 1st generation of VIA's fast ethernet Rhine series.
+
+
+Included files are:
+vfet1a.os2	NDIS 2.0.1 MAC driver
+vfet1a.nif	Network Information File
+vfet1a.sym	Symbol Map file
+vfet1a.lnk	Document (this file)
+source.zip	source files
+
+You could download the latest file on the gomi:NDIS MAC Drivers page,
+URL http://www.os2warp.be/index2.php?name=gomindis .
+
+
+2.No Warranty
+
+This code is provided 'AS IS' and any warranties are disclaimed.
+
+
+3.Note
+
+VT86C100A requires dword aligned buffer. The double buffer method is used 
+for the trasmit queues.
+
+
+4.Redistribution with modification
+
+Your should add your copyright notice, 
+"(c)Copyright 2005 your name. All rights reserved."
+and remove mine (if it exists),
+"(c)Copyright 2005 chagrin. Some rights reserved."
+
+This means that the modified binary/source is not mine, but yours, 
+regardless of the degree of the modification. 
+You can redistribute, of course, that for the commercial purpose 
+without any fee to me, without releasing the source, if you want.
+
+Don't forget that I'm never liable for your product.
+(You, also, should add a disclaimer.)
+
+
+5.History
+
+ver.1.04 - 12/17, 2005.
+- 1 new keyword, IRQ15OVR, was added.
+
+ver.1.03 - 11/15, 2005.
+- Workaround for switch.os2 of Virtual PC.
+- 1 new keyword, OPENBIND, is added to workaround 'transmit before open' issue.
+
+ver.1.02 - 07/23, 2005.
+- MAC address and PHY address are simply reloaded instead of reading 
+  directly EEPROM contents.
+
+ver.1.01 - 07/08, 2005.
+- bugfix: transmit FIFO threshold range was corrected.
+- Disable transmit frame queueing. (chip errata?)
+
+ver.1.00 - 07/07, 2005.
+-  Initial release. Based on vfet2a 1.01.
+
+
+6.Contact to the author
+
+Access os2warp.be Technical Support Center,
+URL http://www.os2warp.be/support/
+ or
+Email to YANAGIHARA Nobuyuki,
+ <VYL00513@nifty.ne.jp>
